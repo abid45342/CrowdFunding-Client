@@ -1,3 +1,17 @@
+/* index.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Lora:wght@400;600&display=swap');
+
+/* Tailwind Directives */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Global Font Styles */
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+/* Custom styles for headers or paragraphs */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Lora', serif;
+}

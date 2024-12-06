@@ -1,10 +1,11 @@
 import { useContext } from "react";
-import { Navigate, NavLink, useNavigate } from "react-router-dom";
+import {  NavLink, useNavigate,  } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
 
 const Navbar = () => {
   const navigate = useNavigate();
-  const { user , setUser } = useContext(AuthContext);
+  
+  const { user  ,handleLogout } = useContext(AuthContext);
   return (
     <div className="navbar bg-base-100">
       <div className="navbar-start">
@@ -33,7 +34,7 @@ const Navbar = () => {
               <NavLink to="/">Home</NavLink>
             </li>
             <li>
-              <NavLink to="/all-campaign">All Campaign</NavLink>
+              <NavLink to='/campaigns'>All Campaign</NavLink>
             </li>
             <li>
               <NavLink to="/addCampaign">Add New Campaign</NavLink>
@@ -52,7 +53,7 @@ const Navbar = () => {
             <NavLink to="/">Home</NavLink>
           </li>
           <li>
-            <NavLink to="/all-campaign">All Campaign</NavLink>
+            <NavLink to='/campaigns'>All Campaign</NavLink>
           </li>
           <li>
             <NavLink to="/addCampaign">Add New Campaign</NavLink>
@@ -75,15 +76,13 @@ const Navbar = () => {
                   className="w-10 h-10 rounded-full object-cover"
                 />
                 <div className="absolute bottom-0  top-12 left-4 text-center  bg-opacity-60 text-gray rounded-b-lg opacity-0 group-hover:opacity-100 transition-opacity">
-                  <p>{user?.displayName}</p>
+                  <p>{user?.name}</p>
                 </div>
               </div>
 
               {/* Log Out Button */}
               <button
-                onClick={() => {
-                  setUser(null); // Log out by clearing user state
-                }}
+                    onClick={()=>{handleLogout()}}
                 className="btn"
               >
                 Log out

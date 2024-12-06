@@ -1,8 +1,7 @@
 // src/pages/Home.jsx
 
 import { FaBullhorn, FaShareAlt, FaHandsHelping, FaUserCircle } from 'react-icons/fa';
-import banner from '../../public/assets/banner-1544x500.png';
-
+import banner from '../assets/banner-1544x500.png'
 const Home = () => {
   return (
     <div>
