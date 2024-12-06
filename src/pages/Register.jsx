@@ -1,11 +1,15 @@
 // src/pages/Register.jsx
-import React, { useContext, useState } from 'react';
+import  { useContext, useState } from 'react';
 import Swal from 'sweetalert2';
 
 import { AuthContext } from '../provider/AuthProvider';
+import {  NavLink, useLocation, useNavigate } from 'react-router-dom';
 
 const Register = () => {
+
     const {createNewUser, setUser} = useContext(AuthContext);
+    const location = useLocation();
+    const navigate = useNavigate();
 
     
     
@@ -39,6 +43,7 @@ const Register = () => {
             icon: 'success',
             confirmButtonText: 'OK'
         })
+        navigate(location?.state?location.state:"/")
         })
         .catch((err)=>{
             console.log(err)
@@ -95,14 +100,15 @@ const Register = () => {
                         />
                     </div>
                     <div className="mb-4">
-                        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="photoURL">
+                        <label className="block text-gray-700 text-sm font-bold mb-2" >
                             Photo URL
                         </label>
                         <input
                             type="url"
                             id="photoURL"
-                            value={photoURL}
-                            onChange={(e) => setPhotoURL(e.target.value)}
+                           value={photoURL}
+                            
+                            onChange={(e) => setPhotoURL(e.target.name.value)}
                             className="w-full px-3 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-teal-600"
                             placeholder="Enter your photo URL (optional)"
                         />
@@ -132,9 +138,9 @@ const Register = () => {
                     </div>
                 </form>
                 <div className="mt-6 text-center">
-                    <a href="/login" className="text-teal-600 hover:underline">
+                    <NavLink to="/login" className="text-teal-600 hover:underline">
                         Already have an account? Login
-                    </a>
+                    </NavLink>
                 </div>
             </div>
         </div>

@@ -3,17 +3,22 @@ import  { useContext } from 'react';
 import { FaGoogle,} from 'react-icons/fa';
 import { AuthContext } from '../provider/AuthProvider';
 import Swal from 'sweetalert2';
+import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 
 
 
 const Login = () => {
     const {userLogin,setUser,googleLogin} = useContext(AuthContext);
+    const location = useLocation();
+    const navigate = useNavigate();
     const handleGoogleLogin = () => {
+       
         googleLogin()
         .then((result) => {
             const user = result.user;
             setUser(user); // Update the user state
             console.log("Google login successful", user);
+            navigate(location?.state?location.state:"/")
         })
         .catch((error) => {
             console.error("Error during Google login:", error.message);
@@ -45,7 +50,10 @@ const Login = () => {
                 icon: 'success',
                 confirmButtonText: 'Continue',
             });
+
             console.log("Login successful", user);
+            navigate(location?.state?location.state:"/")
+           
         })
         .catch((error) => {
             console.error("Error during login:", error.message);
@@ -57,7 +65,7 @@ const Login = () => {
             });
         });
 };
-
+ 
 
     // }
 
@@ -104,7 +112,7 @@ const Login = () => {
                 <div className="mt-6 flex justify-between">
                     <button
                         onClick={handleGoogleLogin}
-                        className="bg-red-500 hover:bg-red-600 w-fit text-white font-bold py-2 px-4 rounded-lg flex items-center justify-center gap-2 w-full mr-2"
+                        className="bg-red-500 hover:bg-red-600  text-white font-bold py-2 px-4 rounded-lg flex items-center justify-center gap-2 w-full mr-2"
                     >
                         <FaGoogle size={20} />
                         Google
@@ -112,9 +120,9 @@ const Login = () => {
 
                 </div>
                 <div className="mt-6 text-center">
-                    <a href="/register" className="text-teal-600 hover:underline">
-                        Don't have an account? Register
-                    </a>
+                    <NavLink to="/register" className="text-teal-600 hover:underline">
+                        Dont have an account? Register
+                    </NavLink>
                 </div>
             </div>
         </div>
