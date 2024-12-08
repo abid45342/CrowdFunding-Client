@@ -24,7 +24,7 @@ else return (
 >
   {/* Typewriter Text */}
   <h1
-    className={` top-32 md:top-72 lg:text-4xl font-bold lg:top-96 text-center absolute inset-0 flex items-center justify-center ${dark ? 'text-white' : 'text-gray-800'}`}
+    className={` top-32 md:top-72 text-xl md:text-2xl  lg:text-4xl font-bold lg:top-96 text-center absolute inset-0 flex items-center justify-center ${dark ? 'text-white' : 'text-gray-800'}`}
   >
     <Typewriter
       words={['Crowdfunding for a Cause: Be the Change']}

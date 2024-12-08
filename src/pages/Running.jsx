@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom'; 
 import Loading from './Loading';
 import { AuthContext } from '../provider/AuthProvider';
+import { Fade } from 'react-awesome-reveal';
 
 const Running = () => {
   const [runningCampaigns, setRunningCampaigns] = useState([]);
@@ -41,9 +42,11 @@ const Running = () => {
 
   return (
     <div className={`my-40 home-page-container ${dark ? 'bg-gray-900' : 'bg-gray-100'} py-8 px-4 mx-20 rounded-lg p-40`}>
-      <h1 className={`text-4xl font-extrabold text-center ${dark ? 'text-gray-300' : 'text-gray-800'} mb-12`}>
-        Running Campaigns
-      </h1>
+       <Fade duration={1000}> {/* Adding Fade animation to the headline */}
+        <h1 className={`text-4xl font-extrabold text-center ${dark ? 'text-gray-300' : 'text-gray-800'} mb-12`}>
+          Running Campaigns
+        </h1>
+      </Fade>
       {runningCampaigns.length > 0 ? (
         <div className="campaign-list grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-20 px-6">
           {runningCampaigns.map((campaign) => (
