@@ -41,9 +41,11 @@ const Running = () => {
 
   return (
     <div className={`my-40 home-page-container ${dark ? 'bg-gray-900' : 'bg-gray-100'} py-8 px-4 mx-20 rounded-lg p-40`}>
-      <h1 className={`text-4xl font-extrabold text-center ${dark ? 'text-gray-300' : 'text-gray-800'} mb-12`}>Running Campaigns</h1>
+      <h1 className={`text-4xl font-extrabold text-center ${dark ? 'text-gray-300' : 'text-gray-800'} mb-12`}>
+        Running Campaigns
+      </h1>
       {runningCampaigns.length > 0 ? (
-        <div className="campaign-list grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-20 px-6">
+        <div className="campaign-list grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-20 px-6">
           {runningCampaigns.map((campaign) => (
             <div
               key={campaign._id}

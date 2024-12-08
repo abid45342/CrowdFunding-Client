@@ -101,13 +101,13 @@ const MyDonation = () => {
   }
 
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="container mx-auto px-4 py-8 ">
       <h1 className="text-2xl font-bold text-center mb-6">My Donations</h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 ">
         {myDonations.map((donation) => (
           <div 
             key={donation._id} 
-            className="max-w-lg bg-white rounded-xl shadow-md hover:shadow-2xl transform hover:scale-105 transition p-4"
+            className=" mx-auto max-w-lg bg-white rounded-xl shadow-md hover:shadow-2xl transform hover:scale-105 transition p-4"
           >
             <img 
               src={donation.image} 

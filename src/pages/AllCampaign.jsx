@@ -109,7 +109,7 @@ const AllCampaign = () => {
                   <td className="px-4 py-2">
                     <NavLink
                       to={`/campaigns/${campaign._id}`}
-                      className="w-full text-white mt-4 py-2 px-4 rounded-lg bg-gray-500 hover:bg-gray-500 transition-all duration-100 transform hover:scale-105 shadow-2xl hover:shadow-10xl font-inter"
+                      className="btn text-white mt-4 py-2 px-4 rounded-lg bg-gray-500 hover:bg-gray-500 transition-all duration-100 transform hover:scale-105 shadow-2xl hover:shadow-10xl font-inter"
                     >
                       See More
                     </NavLink>

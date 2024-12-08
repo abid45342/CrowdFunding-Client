@@ -19,13 +19,12 @@ else return (
   <div className={dark ? 'bg-gray-900' : ''}>
   {/* Banner Section with Background Image */}
   <div
-  className="banner mb-16 relative bg-cover bg-center h-[500px]" // Set a fixed height for the banner
+  className="text-center banner mb-16 relative bg-cover bg-center h-[200px] sm:h-[400px] md:h-[450px]" // Adjust height for small and medium devices
   style={{ backgroundImage: `url(${banner})` }}
 >
   {/* Typewriter Text */}
   <h1
-    className={`text-4xl font-bold top-96 text-center absolute inset-0 flex items-center justify-center ${dark ? 'text-white' : 'text-gray-800'}`}
-
+    className={` top-32 md:top-72 lg:text-4xl font-bold lg:top-96 text-center absolute inset-0 flex items-center justify-center ${dark ? 'text-white' : 'text-gray-800'}`}
   >
     <Typewriter
       words={['Crowdfunding for a Cause: Be the Change']}
