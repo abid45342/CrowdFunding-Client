@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import Swal from 'sweetalert2';
 import { AuthContext } from '../provider/AuthProvider'; // Assumes you have a context for user authentication.
 import { useNavigate } from 'react-router-dom';
@@ -27,33 +27,37 @@ const AddNewCampaign = () => {
             userName: user?.name,
         };
 
-        fetch('http://localhost:5000/campaign', { // Adjust URL to your backend endpoint
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(newCampaign),
-        })
-            .then((res) => res.json())
-            .then((data) => {
-                if (data.insertedId) {
-                    Swal.fire({
-                        title: 'Campaign Successfully Added!',
-                        text: 'Your campaign has been created and is now available for donations.',
-                        icon: 'success',
-                        confirmButtonText: 'View Campaigns',
-                    });
-                }
+        
+            fetch('http://localhost:5000/campaign', { // Adjust URL to your backend endpoint
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(newCampaign),
             })
-            .catch((err) => {
-                console.log(err);
-                Swal.fire({
-                    title: 'Failed to Add Campaign!',
-                    text: 'Something went wrong. Please check your inputs and try again.',
-                    icon: 'error',
-                    confirmButtonText: 'Retry',
+                .then((res) => res.json())
+                .then((data) => {
+                    if (data.insertedId) {
+                        Swal.fire({
+                            title: 'Campaign Successfully Added!',
+                            text: 'Your campaign has been created and is now available for donations.',
+                            icon: 'success',
+                            confirmButtonText: 'View Campaigns',
+                        });
+                    }
+                })
+                .catch((err) => {
+                    console.log(err);
+                    Swal.fire({
+                        title: 'Failed to Add Campaign!',
+                        text: 'Something went wrong. Please check your inputs and try again.',
+                        icon: 'error',
+                        confirmButtonText: 'Retry',
+                    });
                 });
-            });
+            
+
+
     };
 
     return (

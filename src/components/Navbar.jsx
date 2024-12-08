@@ -1,11 +1,14 @@
 import { useContext } from "react";
 import {  NavLink, useNavigate,  } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
+import { IoMoon,IoSunny } from 'react-icons/io5';
 
 const Navbar = () => {
   const navigate = useNavigate();
+
   
-  const { user  ,handleLogout } = useContext(AuthContext);
+  const { user  ,handleLogout,setDark,dark } = useContext(AuthContext);
+  console.log(user)
   return (
     <div className="navbar bg-base-100">
       <div className="navbar-start">
@@ -40,7 +43,11 @@ const Navbar = () => {
               <NavLink to="/addCampaign">Add New Campaign</NavLink>
             </li>
             <li>
-              <NavLink to="/my-donation">My Donation</NavLink>
+            <NavLink to={`/myCampaign/${user?.email}`}>My Campaign</NavLink>
+            </li>
+
+            <li>
+              <NavLink to={`/myDonation/${user?.email}`}>My Donation</NavLink>
             </li>
 
           </ul>
@@ -59,13 +66,22 @@ const Navbar = () => {
             <NavLink to="/addCampaign">Add New Campaign</NavLink>
           </li>
           <li>
-            <NavLink to="/my-donation">My Donation</NavLink>
+              <NavLink to={`/myCampaign/${user?.email}`}>My Campaign</NavLink>
+            </li>
+          <li>
+          <NavLink to={`/myDonation/${user?.email}`}>My Donation</NavLink>
           </li>
+
 
         </ul>
       </div>
+      
       <div className="navbar-end">
+      <button className="mr-20  text-xl btn rounded-2xl bg-gray-200"  onClick={()=>{setDark(!dark)}} >
+  {dark ? <IoMoon /> :  <IoSunny />}
+</button>
        {
+
         user&&user?.email?(
           <div className="flex items-center gap-4">
               {/* User Photo with Hover Effect */}
@@ -93,9 +109,11 @@ const Navbar = () => {
           <div className="flex gap-3">
           <NavLink to='/login'  className="btn">Login</NavLink>
           <NavLink to='/register' className="btn" >Register</NavLink>
+
           </div>
         )
        }
+      
       </div>
     </div>
   );

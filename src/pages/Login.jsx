@@ -1,5 +1,5 @@
 // src/pages/Login.jsx
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { FaGoogle } from "react-icons/fa";
 import { AuthContext } from "../provider/AuthProvider";
 import Swal from "sweetalert2";
@@ -10,6 +10,51 @@ const Login = () => {
   const location = useLocation();
   const navigate = useNavigate();
   
+  // const handleGoogleLogin = () => {
+  //   googleLogin()
+  //     .then((data) => {
+  //       const user = data.user; // Access the user object from the response
+  
+  //       const name = user.displayName;
+  //       console.log(name)
+  //       const email = user.email;
+  //       const photoURL = user.photoURL;
+  //       const userData = { name, email, photoURL };
+  //       setUser(userData); // Update user state with userData
+  //       navigate(location?.state?location.state:"/") // Navigate to the previous or default page
+  
+  //       if (userData.email) {
+  //         Swal.fire({
+  //           title: "Login Successful!",
+  //           icon: "success",
+  //           confirmButtonText: "Continue",
+  //         });
+  
+          
+  //       }
+  
+  //       console.log(userData); // Optional logging for debugging
+  //     })
+      
+  //     .catch((err) => {
+  //       Swal.fire({
+  //         title: "Google Login Failed!",
+  //         text: err.message,
+  //         icon: "error",
+  //         confirmButtonText: "Try Again",
+  //       });
+  //     });
+  // };
+
+
+
+
+
+
+
+
+
+
   const handleGoogleLogin = () => {
     googleLogin()
       .then((data) => {
@@ -20,21 +65,57 @@ const Login = () => {
         const photoURL = user.photoURL;
         const userData = { name, email, photoURL };
         setUser(userData); // Update user state with userData
-        navigate(location?.state?location.state:"/") // Navigate to the previous or default page
+        console.log(location?.state);
+        // navigate(``); // Navigate to the previous or default page 
+
+
+
+
+       
+
+
+
+
+
+
+
   
-        if (userData.email) {
-          Swal.fire({
-            title: "Login Successful!",
-            icon: "success",
-            confirmButtonText: "Continue",
+        // Save or update user data in MongoDB
+        fetch("http://localhost:5000/users", {
+          method: "PUT", // Using PUT for upsert functionality
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(userData), // Send user data
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            // Handle the response from the server
+            if (data.upserted || data.modifiedCount > 0) {
+              Swal.fire({
+                title: "Login Successful!",
+                icon: "success",
+                confirmButtonText: "Continue",
+              });
+            } else {
+              Swal.fire({
+                title: "Welcome back!",
+                icon: "success",
+                confirmButtonText: "Continue",
+              });
+            }
+          })
+          .catch((err) => {
+            Swal.fire({
+              title: "Error!",
+              text: "Failed to save or update user data.",
+              icon: "error",
+              confirmButtonText: "Try Again",
+            });
           });
-  
-          
-        }
   
         console.log(userData); // Optional logging for debugging
       })
-      
       .catch((err) => {
         Swal.fire({
           title: "Google Login Failed!",
@@ -43,19 +124,9 @@ const Login = () => {
           confirmButtonText: "Try Again",
         });
       });
+      navigate( "/");
   };
-
-
-
-
-
-
-
-
-
-
-
-    
+  
     
     
 
@@ -105,15 +176,20 @@ const Login = () => {
               })
              
               setUser(data);
-              navigate(location?.state ? location.state : "/");
+             
+              
+    
+             
               
               console.log(user);
-            }
+            } navigate( "/");
             
             
           });
           
-      })
+      }
+      
+    )
 
       .catch((error) => {
         console.error("Error during login:", error.message);

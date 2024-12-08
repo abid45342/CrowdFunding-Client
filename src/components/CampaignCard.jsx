@@ -2,6 +2,7 @@ import React from "react";
 import { Link, NavLink } from "react-router-dom";
 
 const CampaignCard = ({ campaign }) => {
+  
   return (
     <div className="max-w-lg rounded-xl overflow-hidden bg-white shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
       <img
@@ -28,7 +29,7 @@ const CampaignCard = ({ campaign }) => {
         </div>
         <div className="flex justify-between items-center">
           <NavLink
-            to={`/campaign/${campaign._id}`}
+            to={`/campaigns/${campaign._id}`}
             className="w-full  text-white mt-4 py-2 px-4 rounded-lg bg-gray-500 hover:bg-gray-500 transition-all duration-100 transform hover:scale-105 shadow-2xl hover:shadow-10xl font-inter"
           >
             See More

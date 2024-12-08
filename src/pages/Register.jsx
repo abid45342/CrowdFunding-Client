@@ -246,8 +246,10 @@ const Register = () => {
             const userData = {
               name,
               email,
-              photoURL: photoURL,
+              photoURL
             };
+            setUser(userData);
+            
 
             // Send user data to backend
             fetch("http://localhost:5000/user", {
@@ -266,7 +268,7 @@ const Register = () => {
                     icon: "success",
                     confirmButtonText: "OK",
                   });
-                  setUser(userData); // Set the user context
+                   // Set the user context
                   navigate(location?.state?.from || "/"); // Redirect
                 }
               })
