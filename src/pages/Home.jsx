@@ -19,7 +19,7 @@ else return (
   <div className={dark ? 'bg-gray-900' : ''}>
   {/* Banner Section with Background Image */}
   <div
-  className="text-center banner mb-16 relative bg-cover bg-center h-[200px] sm:h-[400px] md:h-[450px]" // Adjust height for small and medium devices
+  className="text-center banner mb-16 relative bg-cover bg-center h-[200px] sm:h-[400px] md:w-full md:h-[450px]" // Adjust height for small and medium devices
   style={{ backgroundImage: `url(${banner})` }}
 >
   {/* Typewriter Text */}
