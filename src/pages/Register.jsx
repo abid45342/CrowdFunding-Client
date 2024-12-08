@@ -41,7 +41,7 @@
 //         };
   
 //         // Send user data to backend
-//         fetch("http://localhost:5000/user", {
+//         fetch("https://crowd-server.vercel.app/user", {
 //           method: "POST",
 //           headers: {
 //             "Content-Type": "application/json",
@@ -252,7 +252,7 @@ const Register = () => {
             
 
             // Send user data to backend
-            fetch("http://localhost:5000/user", {
+            fetch("https://crowd-server.vercel.app/user", {
               method: "POST",
               headers: {
                 "Content-Type": "application/json",

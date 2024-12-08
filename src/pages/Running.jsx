@@ -13,7 +13,7 @@ const Running = () => {
   useEffect(() => {
     const fetchRunningCampaigns = async () => {
       try {
-        const response = await fetch('http://localhost:5000/camp'); 
+        const response = await fetch('https://crowd-server.vercel.app/camp'); 
         const data = await response.json();
         setRunningCampaigns(data);
         setLoading(false);

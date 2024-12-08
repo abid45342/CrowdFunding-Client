@@ -44,24 +44,24 @@ const router = createBrowserRouter([
   {
     path:'campaigns',
     element:<AllCampaigns></AllCampaigns>,
-    loader : ()=> fetch('http://localhost:5000/campaigns')
+    loader : ()=> fetch('https://crowd-server.vercel.app/campaigns')
   }
   ,{
     path:'campaigns/:id',
     element: <PrivateRoute><CampaignDetails></CampaignDetails>,</PrivateRoute>,
-    loader:({params})=> fetch(`http://localhost:5000/campaigns/${params.id}`)
+    loader:({params})=> fetch(`https://crowd-server.vercel.app/campaigns/${params.id}`)
     
   }
   ,{
     path:'myCampaign/:email',
     element: <PrivateRoute><MyCampaign></MyCampaign></PrivateRoute>,
-    loader:({params})=> fetch(`http://localhost:5000/myCampaign/${params.email}`)
+    loader:({params})=> fetch(`https://crowd-server.vercel.app/myCampaign/${params.email}`)
   }
   ,
   {
     path:'myDonation/:email',
     element:<PrivateRoute><MyDonation></MyDonation></PrivateRoute>,
-    loader:({params})=>fetch(`http://localhost:5000/myDonation/${params.email}`)
+    loader:({params})=>fetch(`https://crowd-server.vercel.app/myDonation/${params.email}`)
   },
   {
     path:"*",

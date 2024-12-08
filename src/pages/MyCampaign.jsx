@@ -34,7 +34,7 @@ const MyCampaign = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/campaigns/${id}`, {
+        fetch(`https://crowd-server.vercel.app/campaigns/${id}`, {
           method: "DELETE",
         })
           .then((response) => response.json())
@@ -62,7 +62,7 @@ const MyCampaign = () => {
     e.preventDefault();
     console.log(updatedCampaign);
   
-    fetch(`http://localhost:5000/campaigns/${updatedCampaign._id}`, {
+    fetch(`https://crowd-server.vercel.app/campaigns/${updatedCampaign._id}`, {
       method: "PATCH", // Change from PUT to PATCH
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(updatedCampaign),
@@ -268,7 +268,7 @@ export default MyCampaign;
 //       confirmButtonText: "Yes, delete it!",
 //     }).then((result) => {
 //       if (result.isConfirmed) {
-//         fetch(`http://localhost:5000/campaigns/${id}`, {
+//         fetch(`https://crowd-server.vercel.app/campaigns/${id}`, {
 //           method: "DELETE",
 //         })
 //           .then((response) => response.json())
@@ -295,7 +295,7 @@ export default MyCampaign;
 //   const handleUpdateSubmit = (e) => {
 //     e.preventDefault();
 
-//     fetch(`http://localhost:5000/campaigns/${updatedCampaign._id}`, {
+//     fetch(`https://crowd-server.vercel.app/campaigns/${updatedCampaign._id}`, {
 //       method: "PATCH",
 //       headers: { "Content-Type": "application/json" },
 //       body: JSON.stringify(updatedCampaign),

@@ -81,7 +81,7 @@ const Login = () => {
 
   
         // Save or update user data in MongoDB
-        fetch("http://localhost:5000/users", {
+        fetch("https://crowd-server.vercel.app/users", {
           method: "PUT", // Using PUT for upsert functionality
           headers: {
             "Content-Type": "application/json",
@@ -158,7 +158,7 @@ const Login = () => {
       .then((result) => {
         const user = result.user;
 
-        fetch("http://localhost:5000/login", {
+        fetch("https://crowd-server.vercel.app/login", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

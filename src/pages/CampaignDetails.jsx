@@ -31,7 +31,7 @@ const CampaignDetails = () => {
   }, []);
 
   const handleDonate = () => {
-    fetch("http://localhost:5000/donater", {
+    fetch("https://crowd-server.vercel.app/donater", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

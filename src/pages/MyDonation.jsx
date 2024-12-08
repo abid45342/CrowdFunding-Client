@@ -84,7 +84,7 @@ const MyDonation = () => {
     // }
 
     // Fetch the donations data
-    fetch(`http://localhost:5000/myDonations/${user.email}`)
+    fetch(`https://crowd-server.vercel.app/myDonations/${user.email}`)
       .then((res) => res.json())
       .then((data) => {
         setMyDonations(data);  // Store the fetched data in state

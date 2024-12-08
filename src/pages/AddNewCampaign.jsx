@@ -28,7 +28,7 @@ const AddNewCampaign = () => {
         };
 
         
-            fetch('http://localhost:5000/campaign', { // Adjust URL to your backend endpoint
+            fetch('https://crowd-server.vercel.app/campaign', { // Adjust URL to your backend endpoint
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
