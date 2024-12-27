@@ -1,8 +1,8 @@
-import React, { useContext, useEffect, useState } from 'react'; 
+import  { useContext, useEffect, useState } from 'react'; 
 import { useNavigate } from 'react-router-dom'; 
 import Loading from './Loading';
 import { AuthContext } from '../provider/AuthProvider';
-import { Fade } from 'react-awesome-reveal';
+
 
 const Running = () => {
   const [runningCampaigns, setRunningCampaigns] = useState([]);
@@ -95,20 +95,6 @@ const Running = () => {
 };
 
 export default Running;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
