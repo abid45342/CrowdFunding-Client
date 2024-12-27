@@ -52,7 +52,7 @@ const Banner = () => {
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
       >
-        {/* Dark Overlay */}
+        {/* Dark Overlayd */}
         <div className="absolute inset-0 bg-gray-900 bg-opacity-50"></div>
 
         {/* Banner Text Content */}
