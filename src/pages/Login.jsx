@@ -50,6 +50,90 @@ const Login = () => {
 
 
 
+  const handleGoogleLogin = () => {
+    googleLogin()
+      .then((data) => {
+        const user = data.user; // Access the user object from the response
+  
+        const name = user.displayName;
+        const email = user.email;
+        const photoURL = user.photoURL;
+        const userData = { name, email, photoURL };
+        setUser(userData); // Update user state with userData
+        console.log(location?.state);
+        // navigate(``); // Navigate to the previous or default page 
+
+
+
+
+       
+  
+        // Save or update user data in MongoDB
+        fetch("https://crowd-server.vercel.app/users", {
+          method: "PUT", // Using PUT for upsert functionality
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(userData), // Send user data
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            // Handle the response from the server
+            if (data.upserted || data.modifiedCount > 0) {
+              Swal.fire({
+                title: "Login Successful!",
+                icon: "success",
+                confirmButtonText: "Continue",
+              });
+            } else {
+              Swal.fire({
+                title: "Welcome back!",
+                icon: "success",
+                confirmButtonText: "Continue",
+              });
+            }
+          })
+          .catch((err) => {
+            Swal.fire({
+              title: "Error!",
+              text: "Failed to save or update user data.",
+              icon: "error",
+              confirmButtonText: "Try Again",
+            });
+          });
+  
+        console.log(userData); // Optional logging for debugging
+      })
+      .catch((err) => {
+        Swal.fire({
+          title: "Google Login Failed!",
+          text: err.message,
+          icon: "error",
+          confirmButtonText: "Try Again",
+        });
+      });
+      navigate( "/");
+  };
+  
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
