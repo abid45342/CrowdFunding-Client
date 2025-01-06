@@ -243,12 +243,13 @@ const Register = () => {
           photoURL: photoURL,
         })
           .then(() => {
-            const userData = {
-              name,
-              email,
-              photoURL
-            };
-            setUser(userData);
+            
+            // const userData = {
+            //   name,
+            //   email,
+            //   photoURL
+            // };
+            // setUser(userData);
             
 
             // Send user data to backend
