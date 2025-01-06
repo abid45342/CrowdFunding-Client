@@ -1,18 +1,39 @@
 
-import { FaFacebook, FaTwitter, FaLinkedin, FaYoutube, FaWhatsapp } from 'react-icons/fa';
+
+
+
+
+
+
+
+import { FaFacebook, FaTwitter, FaLinkedin, FaYoutube, FaWhatsapp, FaHandsHelping } from 'react-icons/fa';
 
 const Footer = () => {
     return (
         <footer className="bg-gray-800 text-white p-8">
             <div className="flex flex-wrap justify-between">
                 <div className="mb-6">
+                    {/* Crowdfunding Logo using React Icons */}
+                    <div className="mb-4">
+                        <FaHandsHelping size={40} className="text-teal-500" />
+                    </div>
                     <h2 className="text-2xl font-bold mb-4">IgnitionDeck</h2>
                     <div className="flex gap-4 mb-4">
-                        <FaFacebook size={30} className="hover:text-gray-400 transition-colors duration-200" />
-                        <FaTwitter size={30} className="hover:text-gray-400 transition-colors duration-200" />
-                        <FaLinkedin size={30} className="hover:text-gray-400 transition-colors duration-200" />
-                        <FaYoutube size={30} className="hover:text-gray-400 transition-colors duration-200" />
-                        <FaWhatsapp size={30} className="hover:text-gray-400 transition-colors duration-200" />
+                        <a href="https://facebook.com/yourprofile" target="_blank" rel="noopener noreferrer">
+                            <FaFacebook size={30} className="hover:text-gray-400 transition-colors duration-200" />
+                        </a>
+                        <a href="https://twitter.com/yourprofile" target="_blank" rel="noopener noreferrer">
+                            <FaTwitter size={30} className="hover:text-gray-400 transition-colors duration-200" />
+                        </a>
+                        <a href="https://linkedin.com/yourprofile" target="_blank" rel="noopener noreferrer">
+                            <FaLinkedin size={30} className="hover:text-gray-400 transition-colors duration-200" />
+                        </a>
+                        <a href="https://youtube.com/yourprofile" target="_blank" rel="noopener noreferrer">
+                            <FaYoutube size={30} className="hover:text-gray-400 transition-colors duration-200" />
+                        </a>
+                        <a href="https://wa.me/yourphonenumber" target="_blank" rel="noopener noreferrer">
+                            <FaWhatsapp size={30} className="hover:text-gray-400 transition-colors duration-200" />
+                        </a>
                     </div>
                     <p className="mb-2">2.5M+ Followers</p>
                     <p className="mb-1">Email: info@ignitiondeck.com</p>

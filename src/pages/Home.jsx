@@ -5,6 +5,7 @@ import { useContext } from 'react';
 import { AuthContext } from '../provider/AuthProvider';
 import { Typewriter } from 'react-simple-typewriter';
 import Loading from './Loading';
+import { Link } from 'react-router-dom';
 
 
 
@@ -19,12 +20,12 @@ else return (
   <div className={dark ? 'bg-gray-900' : ''}>
   {/* Banner Section with Background Image */}
   <div
-  className="text-center banner mb-16 relative bg-cover bg-center h-[200px] sm:h-[400px] md:w-full md:h-[450px]" // Adjust height for small and medium devices
+  className="text-center banner mb-16 relative bg-cover bg-center h-[200px] sm:h-[200px] md:w-full md:h-[400px]" // Adjust height for small and medium devices
   style={{ backgroundImage: `url(${banner})` }}
 >
   {/* Typewriter Text */}
   <h1
-    className={` top-32 md:top-72 text-xl md:text-2xl  lg:text-4xl font-bold lg:top-96 text-center absolute inset-0 flex items-center justify-center ${dark ? 'text-white' : 'text-gray-800'}`}
+    className={` top-32 md:top-72 text-xl md:text-2xl  lg:text-4xl font-bold lg:top-72 text-center absolute inset-0 flex items-center justify-center ${dark ? 'text-white' : 'text-gray-800'}`}
   >
     <Typewriter
       words={['Crowdfunding for a Cause: Be the Change']}
@@ -99,7 +100,31 @@ else return (
             </div>
           </div>
         </div>
+        {/* More Section */}
+
+
       </div>
+{/* More Section */}
+{/* More Section */}
+<div className={`more-section py-12 ${dark ? 'bg-gray-900' : 'bg-white'}`}>
+  <div className="container mx-auto px-4 text-center">
+    <h2 className={`text-3xl font-bold mb-8  ${dark ? 'text-gray-300' : 'text-gray-800'}`}>
+      Want to Know More?
+    </h2>
+    <p className={`mb-8 w-1/3 mx-auto ${dark ? 'text-gray-400' : 'text-gray-700'}`}>
+      Learn more about how you can make a difference or get in touch with our team for any questions. Join the movement today!
+    </p>
+<Link to='about'>
+<a
+      href="/learn-more"  // Replace with your target link
+      className="bg-teal-500 text-white px-6 py-3 rounded-lg shadow-lg transition-transform transform hover:scale-105"
+    >
+      Learn More
+    </a></Link>
+  </div>
+</div>
+
+
     </div>
   </div>
 </div>

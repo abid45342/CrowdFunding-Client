@@ -108,7 +108,7 @@ const CampaignDetails = () => {
         <div className="mt-6 flex justify-center">
           <button
             onClick={handleDonate}
-            className={` ${expired ? "cursor-not-allowed opacity-50" : ""} btn bg-teal-500 text-white py-2 px-6 rounded-lg shadow-md hover:bg-teal-700 transition duration-200`}
+            className={` ${expired} ? "cursor-not-allowed opacity-50 disabled " :   " btn bg-teal-500 text-white py-2 px-6 rounded-lg shadow-md hover:bg-teal-700 transition duration-200"   `}
           >
             {expired ? "Campaign Expired" : "Donate Now"}
           </button>

@@ -41,7 +41,7 @@ const Running = () => {
   }
 
   return (
-    <div className={`my-40 home-page-container ${dark ? 'bg-gray-900' : 'bg-gray-100'} py-8 px-4 mx-20 rounded-lg p-40`}>
+    <div className={`mb-10 home-page-container ${dark ? 'bg-gray-900' : 'bg-gray-100'} py-8 px-4 mx-20 rounded-lg p-40`}>
       {/* Fade-in effect from react-reveal */}
         <h1 className={`text-4xl font-extrabold text-center ${dark ? 'text-gray-300' : 'text-gray-800'} mb-12`}>
           Running Campaigns
@@ -49,7 +49,7 @@ const Running = () => {
       
 
       {runningCampaigns.length > 0 ? (
-        <div className="campaign-list grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-20 px-6">
+        <div className="campaign-list grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-5 px-6">
           {runningCampaigns.map((campaign) => (
             <div
               key={campaign._id}
@@ -68,7 +68,7 @@ const Running = () => {
               <h2 className={`text-2xl font-semibold ${dark ? 'text-gray-300' : 'text-gray-800'} mb-2`}>
                 {campaign.title}
               </h2>
-              <p className={`text-gray-600 text-base mb-4 ${dark ? 'text-gray-400' : ''}`}>{campaign.description}</p>
+              <p className={`text-gray-600 text-base mb-4 line-clamp-3 ${dark ? 'text-gray-400' : ''}`}>{campaign.description}</p>
               <div className="text-sm text-gray-500">
                 <p>Type: <span className="font-medium text-gray-700">{campaign.type}</span></p>
                 <p>Min Donation: <span className="font-medium text-gray-700">${campaign.minDonation}</span></p>
