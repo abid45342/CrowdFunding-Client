@@ -1,20 +1,35 @@
-# Realtime Chat Application
+# IgnitionDeck
 
-### [Live Site](https://realtime-chat-application.netlify.com)
+A crowdfunding platform designed to simplify campaign creation, manage donations, and engage users effectively. It features a sleek design with light/dark mode toggle and robust functionality.
 
-### [🌟 Become a top 1% Next.js 13 developer in only one course](https://jsmastery.pro/next13)
-### [🚀 Land your dream programming job in 6 months](https://jsmastery.pro/masterclass)
+![Screenshot](./screenshot.png) <!-- Replace with an actual screenshot path -->
 
-![Chat Application](https://i.ytimg.com/vi/ZwFA3YMfkoc/maxresdefault.jpg)
+## Main Technologies Used
+- React
+- Firebase
+- MongoDB
+- Tailwind CSS
+- Lottie
+- React-tooltip
 
-## Introduction
-This is a code repository for the corresponding video tutorial. 
+## Key Features
+1. User authentication (email/password and social login).
+2. Campaign creation and management with a dynamic dashboard.
+3. Donation functionality with real-time updates.
+4. Protected routes for enhanced security.
+5. Interactive user experience with tooltips and animations.
+6. Dark/light theme toggle.
 
-In this video, we will create a full Realtime Chat Application. We're going to use  React on the front end, with NodeJS + Socket.io web socket library on the back end. 
+## Dependencies
+- React: ^18.x
+- Firebase: ^9.x
+- React-router-dom: ^6.x
+- Tailwind CSS: ^3.x
+- Axios: ^1.x
+- Lottie-react: ^2.x
+- React-tooltip: ^5.x
 
-By the end of this video, you will have a strong understanding of how to send and receive messages using web sockets and Socket.io to make any real-time application.
-
-## Launch your development career with project-based coaching - https://www.jsmastery.pro
-
-Setup:
-- run ```npm i && npm start``` for both client and server side to start the development server
+## How to Run Locally
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/IgnitionDeck.git
