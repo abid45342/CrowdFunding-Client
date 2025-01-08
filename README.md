@@ -2,7 +2,7 @@
 
 A crowdfunding platform designed to simplify campaign creation, manage donations, and engage users effectively. It features a sleek design with light/dark mode toggle and robust functionality.
 
-![Screenshot](./screenshot.png) <!-- Replace with an actual screenshot path -->
+
 
 ## Main Technologies Used
 - React
