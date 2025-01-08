@@ -1,49 +1,20 @@
-Crowdcube - Crowdfunding Platform
+# Realtime Chat Application
 
-(Screenshot: Add a real screenshot of your project here)
+### [Live Site](https://realtime-chat-application.netlify.com)
 
-Overview
-Crowdcube is a modern crowdfunding platform allowing users to create, manage, and support campaigns seamlessly. Built with a robust tech stack, it ensures secure authentication, smooth interactions, and responsive design with theme toggle support.
+### [🌟 Become a top 1% Next.js 13 developer in only one course](https://jsmastery.pro/next13)
+### [🚀 Land your dream programming job in 6 months](https://jsmastery.pro/masterclass)
 
-Live Site: Crowdcube
+![Chat Application](https://i.ytimg.com/vi/ZwFA3YMfkoc/maxresdefault.jpg)
 
-Key Features
-Authentication: Firebase-secured user login and sign-up system.
-Campaign Management: Create, update, and manage crowdfunding campaigns easily.
-Donation System: A secure and streamlined donation process.
-Dark/Light Mode: Accessible theme toggle for user preference.
-Interactive UI: React-powered dynamic interface for a smooth experience.
-Technologies Used
-Frontend: React, Tailwind CSS, Lottie, React-tooltip
-Backend: Node.js, Firebase, MongoDB
-Dependencies
-React: Frontend framework
-Firebase: Authentication and hosting
-Axios: API requests
-React-router-dom: Navigation
-Tailwind CSS: Styling
-How to Run Locally
-Clone the repository:
-bash
-Copy code
-git clone https://github.com/your-username/crowdcube.git  
-cd crowdcube  
-Install dependencies:
-bash
-Copy code
-npm install  
-Set up Firebase:
-Add your Firebase config in a .env file.
-env
-Copy code
-REACT_APP_API_KEY=your_api_key  
-REACT_APP_AUTH_DOMAIN=your_auth_domain  
-...  
-Run the development server:
-bash
-Copy code
-npm start  
-Access the project in your browser at http://localhost:3000.
-Relevant Links
-Live Site: Crowdcube
-GitHub Repository: GitHub Link
+## Introduction
+This is a code repository for the corresponding video tutorial. 
+
+In this video, we will create a full Realtime Chat Application. We're going to use  React on the front end, with NodeJS + Socket.io web socket library on the back end. 
+
+By the end of this video, you will have a strong understanding of how to send and receive messages using web sockets and Socket.io to make any real-time application.
+
+## Launch your development career with project-based coaching - https://www.jsmastery.pro
+
+Setup:
+- run ```npm i && npm start``` for both client and server side to start the development server
