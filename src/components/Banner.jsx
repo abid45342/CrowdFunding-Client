@@ -1,33 +1,4 @@
-// import { motion } from "framer-motion";
-// import { useContext } from 'react';
-// import { FaBullhorn, FaHandsHelping, FaShareAlt, FaUserCircle } from 'react-icons/fa';
-// import { Typewriter } from 'react-simple-typewriter';
 
-// import { AuthContext } from '../provider/AuthProvider';
-// import banner from "../assets/banner-1544x500.png";
-
-
-
-// const Banner = () => {
-//     const {  dark } = useContext(AuthContext);
-   
-//     return (
-//         <div className={dark ? 'bg-gray-900' : ''}>
-//         {/* Banner Section with Background Image */}
-  
-  
-//         <div
-//     className="text-center banner mb-16 relative bg-cover bg-center h-[200px] sm:h-[400px] md:w-full md:h-[450px]" // Adjust height 
-//     style={{ backgroundImage: `url(${banner})` }}
-//   >
-   
-
-//   </div>
-//           </div>
-//     );
-// };
-
-// export default Banner;
 
 
 import { useContext } from "react";
@@ -42,7 +13,7 @@ const Banner = () => {
     <div className={dark ? "bg-gray-900" : "bg-white "}>
       {/* Banner Section with Background Image */}
       <motion.div
-        className="relative text-center mb-16 h-[250px] sm:h-[400px] md:h-[500px] bg-cover bg-center  shadow-lg overflow-hidden"
+        className="relative text-center mb-16  sm:h-[400px] md:h-[500px]  bg-cover bg-center  shadow-lg overflow-hidden"
         style={{
           backgroundImage: `url('https://i.ibb.co/MffXctc/image.png')`,
           backgroundSize: "cover",

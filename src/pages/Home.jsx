@@ -18,7 +18,7 @@ const Home = () => {
     <div className={dark ? 'bg-gray-900' : ''}>
       {/* Banner Section with Background Image */}
       <div
-        className="text-center banner mb-16 relative bg-cover bg-center h-[200px] sm:h-[200px] md:w-full md:h-[400px]"
+        className="text-center banner mb-16 relative bg-cover bg-center lg:h-[500px] h-[200px] md:w-full md:h-[400px]"
         style={{ backgroundImage: `url(${banner})` }}
       >
         {/* Typewriter Text */}
@@ -27,7 +27,7 @@ const Home = () => {
             dark ? 'text-white' : 'text-gray-800'
           }`}
         >
-          <Typewriter
+          {/* <Typewriter
             words={['Crowdfunding for a Cause: Be the Change']}
             loop={5}
             cursor
@@ -35,7 +35,7 @@ const Home = () => {
             typeSpeed={100}
             deleteSpeed={50}
             delaySpeed={2000}
-          />
+          /> */}
         </h1>
       </div>
 
