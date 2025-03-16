@@ -6,6 +6,7 @@ import { AuthContext } from '../provider/AuthProvider';
 import { Typewriter } from 'react-simple-typewriter';
 import Loading from './Loading';
 import { Link } from 'react-router-dom';
+import Banner from '../components/Banner';
 
 const Home = () => {
   const { loading, dark } = useContext(AuthContext);
@@ -17,27 +18,13 @@ const Home = () => {
   return (
     <div className={dark ? 'bg-gray-900' : ''}>
       {/* Banner Section with Background Image */}
-      <div
+      {/* <div
         className="text-center banner mb-16 relative bg-cover bg-center lg:h-[500px] h-[200px] md:w-full md:h-[400px]"
         style={{ backgroundImage: `url(${banner})` }}
       >
-        {/* Typewriter Text */}
-        <h1
-          className={`top-32 md:top-72 text-xl md:text-2xl lg:text-4xl font-bold lg:top-72 text-center absolute inset-0 flex items-center justify-center ${
-            dark ? 'text-white' : 'text-gray-800'
-          }`}
-        >
-          {/* <Typewriter
-            words={['Crowdfunding for a Cause: Be the Change']}
-            loop={5}
-            cursor
-            cursorStyle="_"
-            typeSpeed={100}
-            deleteSpeed={50}
-            delaySpeed={2000}
-          /> */}
-        </h1>
-      </div>
+
+      </div> */}
+      <Banner></Banner>
 
       <Running />
 

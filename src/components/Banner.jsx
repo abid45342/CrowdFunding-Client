@@ -1,73 +1,83 @@
-
-
-
-import { useContext } from "react";
-import { Typewriter } from "react-simple-typewriter";
-import { AuthContext } from "../provider/AuthProvider";
+import React from "react";
 import { motion } from "framer-motion";
+import { Typewriter } from "react-simple-typewriter";
+import { Link } from "react-router-dom";
+import backgroundImage from "../assets/banner3.jpg"; // Replace with your image path
+
 
 const Banner = () => {
-  const { dark } = useContext(AuthContext);
+  // Animation variants for Framer Motion
+  const textVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
+  };
 
   return (
-    <div className={dark ? "bg-gray-900" : "bg-white "}>
-      {/* Banner Section with Background Image */}
-      <motion.div
-        className="relative text-center mb-16  sm:h-[400px] md:h-[500px]  bg-cover bg-center  shadow-lg overflow-hidden"
-        style={{
-          backgroundImage: `url('https://i.ibb.co/MffXctc/image.png')`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1 }}
-      >
-        {/* Dark Overlay */}
-        <div className="absolute inset-0 bg-gray-900 bg-opacity-50"></div>
+    <div
+      className="relative  h-[650px] bg-cover"
+      style={{
+        backgroundImage: `url(${backgroundImage})`, 
+      }}
+    >
+      {/* Dim Overlay */}
+      <div className="absolute inset-0 bg-black bg-opacity-40       "></div>
 
-        {/* Banner Text Content */}
-        <div className="relative z-10 mt-12  flex flex-col justify-center items-center h-full text-white px-6 md:px-12 ">
-          <motion.h1
-            className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight mb-6"
-            initial={{ y: -50, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 1, ease: "easeOut" }}
-          >
-            <Typewriter
-              words={[
-                "Crowdfunding & Charity Platform",
-                "Make a Difference Today",
-                "Support Causes That Matter",
-              ]}
-              loop
-              cursor
-              cursorStyle="_"
-            />
-          </motion.h1>
-          <motion.p
-            className="text-lg sm:text-xl md:text-2xl font-light leading-relaxed max-w-3xl"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 0.5 }}
-          >
-            Join hands with us to empower communities, fund impactful projects,
-            and bring positive change. Every contribution counts.
-          </motion.p>
+      {/* Text Overlay */}
+      <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-6">
+        <motion.h1
+          className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white drop-shadow-lg mb-4"
+          variants={textVariants}
+          initial="hidden"
+          animate="visible"
+        >
+          Empower Change with Every Donation
+        </motion.h1>
 
-          {/* Call to Action Button */}
+        <motion.p
+          className="text-lg md:text-xl lg:text-2xl text-white drop-shadow-md mb-6 max-w-2xl"
+          variants={textVariants}
+          initial="hidden"
+          animate="visible"
+          transition={{ delay: 0.3 }}
+        >
+          <Typewriter
+            words={["Support Dreams", "Build Communities", "Create Impact"]}
+            loop={true}
+            cursor
+            cursorStyle="|"
+            typeSpeed={70}
+            deleteSpeed={50}
+            delaySpeed={1000}
+          />
+        </motion.p>
 
-<motion.a 
-            href="#donate"
-            className="mt-4 inline-block px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-full shadow-lg transform transition-all duration-300 ease-in-out hover:scale-105  "
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-          >
-            Start Your Impact
-          </motion.a>
-
-        </div>
-      </motion.div>
+        <motion.div
+          className="flex gap-4"
+          variants={textVariants}
+          initial="hidden"
+          animate="visible"
+          transition={{ delay: 0.6 }}
+        >
+          <Link to="/start-campaign">
+            <motion.button
+              className="px-6 py-3 bg-teal-500 text-white rounded-full shadow-lg hover:bg-teal-600 transition-all duration-300"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Start a Campaign
+            </motion.button>
+          </Link>
+          <Link to="/campaigns">
+            <motion.button
+              className="px-6 py-3 bg-transparent border-2 border-white text-white rounded-full hover:bg-white hover:text-teal-600 transition-all duration-300"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Explore Campaigns
+            </motion.button>
+          </Link>
+        </motion.div>
+      </div>
     </div>
   );
 };
