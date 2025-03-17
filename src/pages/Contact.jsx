@@ -1,6 +1,6 @@
 const Contact = () => {
     return (
-      <div className="container mx-auto p-8">
+      <div className="container mx-auto p-8 mt-16">
         <h1 className="text-4xl font-bold mb-6 text-center text-teal-500">Contact Us</h1>
   
         <section className="mb-8">

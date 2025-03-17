@@ -1,120 +1,5 @@
 
 
-
-// import React, { useState, useEffect, useContext } from "react";
-// import { useLoaderData, useNavigate } from "react-router-dom";
-// import { AuthContext } from "../provider/AuthProvider";
-// import Loading from './Loading';
-
-// const AllCampaign = () => {
-//   const campaigns = useLoaderData();
-//   const [sortedCampaigns, setSortedCampaigns] = useState([]);
-//   const [isOpen, setIsOpen] = useState(false);
-//   const [selectedSort, setSelectedSort] = useState("Low to High");
-//   const [loading, setLoading] = useState(true);
-//   const { dark } = useContext(AuthContext);
-//   const navigate = useNavigate();
-
-//   useEffect(() => {
-//     if (campaigns) {
-//       setSortedCampaigns(campaigns);
-//       setLoading(false);
-//     }
-//   }, [campaigns]);
-
-//   const handleSort = (order) => {
-//     const sorted = [...campaigns].sort((a, b) =>
-//       order === "asc" ? a.minDonation - b.minDonation : b.minDonation - a.minDonation
-//     );
-//     setSortedCampaigns(sorted);
-//     setSelectedSort(order === "asc" ? "Low to High" : "High to Low");
-//     setIsOpen(false);
-//   };
-
-//   const handleSeeMore = (campaignId) => {
-//     navigate(`/campaigns/${campaignId}`);
-//   };
-
-//   if (loading) {
-//     return (
-//       <div className={`flex justify-center items-center h-screen ${dark ? 'bg-gray-900' : 'bg-gray-100'}`}>
-//         <p className={`text-xl font-semibold ${dark ? 'text-gray-300' : 'text-gray-600'}`}>
-//           <Loading /> Loading...
-//         </p>
-//       </div>
-//     );
-//   }
-
-//   return (
-//     <div className={`mx-6 md:mx-12 lg:mx-16 xl:mx-24 my-16 p-6 min-h-screen flex flex-col items-center justify-between ${dark ? 'bg-gray-900' : ''}`}>
-//       <h1 className="text-3xl font-bold text-center text-gray-800 mb-8">All Campaigns</h1>
-//       <p className="text-lg text-gray-600 text-center mb-10 max-w-3xl">Discover inspiring campaigns that you can be a part of today!</p>
-
-//       {/* Sort Button with Dropdown */}
-//       <div className="relative mb-6 w-full flex justify-end">
-//         <button onClick={() => setIsOpen(!isOpen)} className="px-3 py-1.5 bg-teal-500 text-white rounded-lg shadow-lg hover:bg-teal-600 transition duration-200 text-sm flex items-center">
-//           <span className="mr-2">Sort: {selectedSort}</span>
-//           <svg className={`w-3 h-3 transform transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-//             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
-//           </svg>
-//         </button>
-
-//         {/* Dropdown Menu */}
-//         {isOpen && (
-//           <div className=" absolute right-0 mt-10 w-32 bg-white shadow-lg rounded-lg overflow-hidden text-sm z-10 mb-1">
-//             <button onClick={() => handleSort("asc")} className="w-full px-3 py-1 text-left text-gray-800 hover:bg-gray-100">Low to High</button>
-//             <button onClick={() => handleSort("desc")} className="w-full px-3 py-1 text-left text-gray-800 hover:bg-gray-100">High to Low</button>
-//           </div>
-//         )}
-//       </div>
-
-//       {/* Campaign Cards */}
-//       <div className=" mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-8 px-6">
-//   {sortedCampaigns.length > 0 ? (
-//     sortedCampaigns.map((campaign) => (
-//       <div 
-//         key={campaign._id} 
-//         className={`flex flex-col justify-between h-full rounded-lg overflow-hidden shadow-xl bg-white transform transition-transform duration-300 hover:scale-105 ${dark ? 'border border-gray-700' : 'border border-gray-200'}`}
-//       >
-//         {/* Image Section */}
-//         <div className="relative">
-//           <img src={campaign.image} alt={campaign.title} className="w-full h-48 object-cover" />
-//           <div className="absolute top-4 left-4 bg-teal-600 text-white text-sm px-3 py-1 rounded-md">{campaign.deadline}</div>
-//         </div>
-
-//         {/* Content Section */}
-//         <div className="px-4 py-4 flex-grow">
-//           <h3 className={`text-xl font-semibold mb-2 ${dark ? 'text-gray-300' : 'text-gray-800'}`}>{campaign.title}</h3>
-//           <p className={` line-clamp-4 text-base text-gray-600 mb-4 ${dark ? 'text-gray-400' : ''}`}>{campaign.description}</p>
-//           <div className="text-sm text-gray-500">
-//             <p>Min Donation: <span className="font-medium text-gray-700">${campaign.minDonation}</span></p>
-//             <p>Total Raised: <span className="font-medium text-gray-700">${campaign.totalRaised}</span></p>
-//           </div>
-//         </div>
-
-//         {/* Action Button */}
-//         <div className="p-4 bg-gray-100">
-//           <button
-//             onClick={() => handleSeeMore(campaign._id)}
-//             className="w-full py-2 px-6 bg-teal-600 text-white rounded-full hover:bg-teal-700 focus:outline-none transition-all"
-//           >
-//             See More
-//           </button>
-//         </div>
-//       </div>
-//     ))
-//   ) : (
-//     <p className="text-center text-lg text-gray-500">No campaigns available.</p>
-//   )}
-// </div>
-
-//     </div>
-//   );
-// };
-
-// export default AllCampaign;
-
-
 import React, { useState, useEffect, useContext } from "react";
 import { useLoaderData, useNavigate } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
@@ -167,7 +52,7 @@ const AllCampaign = () => {
   };
 
   return (
-    <div className={`min-h-screen py-16 px-6 md:px-12 lg:px-16 xl:px-24 ${dark ? 'bg-gray-900' : 'bg-white'} transition-colors duration-300 overflow-hidden`}>
+    <div className={`mt-12  min-h-screen py-16 px-6 md:px-12 lg:px-16 xl:px-24 ${dark ? 'bg-gray-900' : 'bg-white'} transition-colors duration-300 overflow-hidden`}>
       {/* Header Section */}
       <motion.div
         initial={{ opacity: 0, y: -50 }}

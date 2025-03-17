@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Typewriter } from "react-simple-typewriter";
 import { Link } from "react-router-dom";
 import backgroundImage from "../assets/banner3.jpg"; // Replace with your image path
+import Navbar from "./Navbar";
 
 
 const Banner = () => {
@@ -14,16 +15,18 @@ const Banner = () => {
 
   return (
     <div
-      className="relative  h-[650px] bg-cover"
+      className=" relative h-[650px] bg-cover"
       style={{
         backgroundImage: `url(${backgroundImage})`, 
       }}
     >
+   
       {/* Dim Overlay */}
-      <div className="absolute inset-0 bg-black bg-opacity-40       "></div>
+      <div className="absolute inset-0 bg-black bg-opacity-60       "></div>
 
       {/* Text Overlay */}
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-6">
+        
         <motion.h1
           className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white drop-shadow-lg mb-4"
           variants={textVariants}
@@ -60,7 +63,7 @@ const Banner = () => {
         >
           <Link to="/start-campaign">
             <motion.button
-              className="px-6 py-3 bg-teal-500 text-white rounded-full shadow-lg hover:bg-teal-600 transition-all duration-300"
+              className="px-6 py-3 bg-mint text-black rounded-full shadow-lg hover:bg-[#1B1F2E] hover:text-white transition-all duration-300 "
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
             >
