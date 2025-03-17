@@ -88,7 +88,7 @@ const MyCampaign = () => {
   };
 
   return (
-    <div className="p-4">
+    <div className="p-4 mt-20 text-center">
       <h2 className="text-2xl font-bold mb-4">My Campaigns</h2>
       {campaigns.length === 0 ? (
         <p>You don't have any campaigns yet.</p>

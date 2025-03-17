@@ -129,7 +129,7 @@ const AllCampaign = () => {
           sortedCampaigns.map((campaign) => (
             <motion.div
               key={campaign._id}
-              className={`rounded-2xl overflow-hidden bg-white dark:bg-gray-800 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:scale-105 ${dark ? 'border border-gray-700' : 'border border-teal-200'}`}
+              className={` flex flex-col justify-between rounded-2xl overflow-hidden bg-white dark:bg-gray-800 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:scale-105 ${dark ? 'border border-gray-700' : 'border border-teal-200'}`}
               variants={cardVariants}
             >
               {/* Image Section */}

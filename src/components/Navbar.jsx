@@ -18,6 +18,7 @@ const Navbar = () => {
   const navigate = useNavigate();
   const { user, handleLogout, setDark, dark } = useContext(AuthContext);
   const controls = useAnimation();
+  console.log(user)
 
   // Animation variants for Framer Motion
   const navItemVariants = {
@@ -93,7 +94,7 @@ const Navbar = () => {
       </div>
 
       {/* Navbar Center */}
-      <div className="navbar-center hidden lg:flex px-40 border-x border-[rgba(255,255,255,0.15)] items-center">
+      <div className={`navbar-center hidden lg:flex ${user?.email?'pl-4':'px-40'} border-x border-[rgba(255,255,255,0.15)] items-center`}>
         <motion.ul
           className="menu menu-horizontal px-1"
           initial="hidden"
@@ -121,7 +122,7 @@ const Navbar = () => {
       </div>
 
       {/* Navbar End */}
-      <div className="navbar-end flex items-center gap-4">
+      <div className="navbar-end flex pr-4 items-center gap-4">
         {/* Dark Mode Toggle */}
         <motion.button
           className="btn btn-circle bg-transparent hover:bg-transparent hover:text-mint dark:bg-gray-700 text-white dark:text-white dark:hover:bg-transparent transition-colors"
@@ -153,7 +154,7 @@ const Navbar = () => {
             {/* Logout Button */}
             <motion.button
               onClick={() => handleLogout()}
-              className="btn bg-white text-white hover:bg-transparent hover:text-mint rounded-full px-6 mr-4"
+              className="btn bg-transparent text-white hover:bg-transparent hover:text-mint rounded-full px-6 mr-4"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >

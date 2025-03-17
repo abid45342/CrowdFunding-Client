@@ -61,7 +61,7 @@ const AddNewCampaign = () => {
     };
 
     return (
-        <div className=" py-20 min-h-screen flex items-center justify-center bg-gray-100">
+        <div className=" py-20 min-h-screen flex items-center justify-center bg-gray-100 mt-20">
             <div className="bg-white rounded-xl p-8 rounded-lg shadow-lg w-full max-w-4xl h-auto"> {/* Increased max-width and set height to auto */}
                 <h2 className="text-2xl font-bold mb-6 text-center">Add New Campaign</h2>
                 <form onSubmit={handleSubmit}>

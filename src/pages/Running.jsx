@@ -53,7 +53,7 @@ const Running = () => {
           {runningCampaigns.map((campaign) => (
             <div
               key={campaign._id}
-              className={`campaign-card ${dark ? 'bg-gray-800 text-white' : 'bg-white'} rounded-2xl shadow-lg p-6 transition-all transform hover:scale-105 hover:shadow-2xl mb-8`}
+              className={`campaign-card  flex flex-col justify-between ${dark ? 'bg-gray-800 text-white' : 'bg-white'} rounded-2xl shadow-lg p-6 transition-all transform hover:scale-105 hover:shadow-2xl mb-8`}
             >
               <div className="relative mb-4">
                 <img

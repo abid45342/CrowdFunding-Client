@@ -64,7 +64,7 @@ const CampaignDetails = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gray-100 py-10 px-5">
+    <div className="min-h-screen bg-gray-100 py-10 px-5 mt-20">
       <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-8">
         {/* Campaign Image */}
         <div className="mb-6">
@@ -108,13 +108,13 @@ const CampaignDetails = () => {
         <div className="mt-6 flex justify-center">
           <button
             onClick={handleDonate}
-            className={` ${expired} ? "cursor-not-allowed opacity-50 disabled " :   " btn bg-teal-500 text-white py-2 px-6 rounded-lg shadow-md hover:bg-teal-700 transition duration-200"   `}
+            className={`btn  ${expired? 'cursor-not-allowed  opacity-50 ':'btn bg-teal-500 text-white py-2 px-6 rounded-lg shadow-md hover:bg-teal-700 transition duration-200'  } `} disabled={expired}
           >
             {expired ? "Campaign Expired" : "Donate Now"}
           </button>
         </div>
       </div>
-      <ToastContainer />
+      {/* <ToastContainer /> */}
     </div>
   );
 };
